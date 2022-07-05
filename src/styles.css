@@ -1,9 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+html {
+  font-size: 18px;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
   background-color: #42444D;
   width:400px;
-    color:white;
+  color:white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  width: 100%; 
+  max-width: 500px;
+  border: 1px solid white;
+  margin: auto;
 }
 .Header {
   background-color: #FF7300;
@@ -11,8 +42,78 @@
   width:400px;
   height:auto;
   align:center;
+   padding: 0 0.25em;
+   align-items: center;
 }
 
 li {
   list-style:none;
+}
+
+ul {
+  width: 100%;
+  list-style: none;
+  padding: 0 0.25rem 0.25rem;
+}
+
+
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+footer {
+  width: 100%;
+  padding: 0.25em;
+  background-color: mediumblue;
+  color: aliceblue;
+  display: grid;
+  place-content: center;
+}
+
+.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  margin: 0.25rem 0;
+  background-color: #808080 ;
+}
+
+.item input[type="checkbox"] {
+  text-align: center;
+  width: 1.5rem;
+  width: 48px;
+  min-width: 48px;
+  height: 1.5rem;
+  height: 48px;
+  min-height: 48px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.item svg {
+  margin-left:20px;
+  width: 48px;
+  min-width: 48px;
+  height: 36px;
+  font-size: 1rem;
+  color: black;
+  cursor: pointer;
+}
+
+.item input[type="checkbox"]:focus + label {
+  text-decoration: underline;
+}
+
+.item svg:focus, 
+.item svg:hover {
+  color: red;
+  outline: none;
 }

@@ -1,5 +1,10 @@
 
 import {useState  } from 'react';
+import {BsHammer} from 'react-icons/bs'
+
+
+
+
 export default function Content() {
 
   const [items,setItems] = useState([
@@ -33,16 +38,21 @@ export default function Content() {
     <div className="Content">
 
 
-{items.map(item =>
+{items.map(item =><ul>
 
-<li>
+<li className='item'>
 <input 
 type='checkbox'
 item={item.checked}
 />
 {item.item}
-<button> Delete</button>
-</li>)}
+<BsHammer
+role='button' 
+tabIndex='0' 
+/>
+</li>
+</ul>
+)}
 
 
      
