@@ -34,8 +34,22 @@ export default function Content() {
     },
 
   ])
+
+ const handleCheck = (id) => {
+
+const listItems = items.map((item) => item.id===id ? {...items,
+ checked:!item.checked} :item);
+
+ setItems(listItems)
+
+localStorage.setItem('shoppinglist', JSON.stringify(listItems));
+
+  }
+ 
+  
+
   return (
-    <div className="Content">
+    <div className="main">
 
 
 {items.map(item =><ul>
@@ -44,6 +58,7 @@ export default function Content() {
 <input 
 type='checkbox'
 item={item.checked}
+onChange={()=>handleCheck(item.id)}
 />
 {item.item}
 <BsHammer
@@ -53,9 +68,7 @@ tabIndex='0'
 </li>
 </ul>
 )}
-
-
-     
-    </div>
+  
+ </div>
   );
 }
