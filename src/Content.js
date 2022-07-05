@@ -38,7 +38,7 @@ export default function Content() {
  const handleCheck = (id) => {
 
 const listItems = items.map((item) => item.id===id ? {...items,
- checked:!item.checked} :item);
+ checked:!item.checked} :items);
 
  setItems(listItems)
 
@@ -46,7 +46,14 @@ localStorage.setItem('shoppinglist', JSON.stringify(listItems));
 
   }
  
-  
+  const handleDelete = (id) => {
+  const listItems = items.filter((item) => item.id !==id ? {...items,
+ checked:!item.checked} :items);
+
+  setItems(listItems)
+
+localStorage.setItem('shoppinglist', JSON.stringify(listItems));
+  }
 
   return (
     <div className="main">
@@ -63,7 +70,8 @@ onChange={()=>handleCheck(item.id)}
 {item.item}
 <BsHammer
 role='button' 
-tabIndex='0' 
+tabIndex='0'
+onClick={()=>handleDelete(item.id) }
 />
 </li>
 </ul>
