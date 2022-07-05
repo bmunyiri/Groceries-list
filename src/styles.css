@@ -1,0 +1,18 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #42444D;
+  width:400px;
+    color:white;
+}
+.Header {
+  background-color: #FF7300;
+  color:white;
+  width:400px;
+  height:auto;
+  align:center;
+}
+
+li {
+  list-style:none;
+}
